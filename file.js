@@ -1,10 +1,16 @@
+// to update the Relationship #counter each time the Add More button is pressed
+var count = 2;
+function incrementCount() {
+    count++;
+}
+
 // to add more relationships on pressing the add button using innerHTML
 
 function addMore() {
     let addRelationship = document.getElementById("addRelationship");
     let divElement = document.createElement("div");
     divElement.innerHTML = 
-        '<h4 class = "mb-3" >' + 'Relationship 2' + '</h4>' + 
+        '<h4 class = "mb-3" >' + 'Relationship ' + count + '</h4>' + 
         '<div class = "mb-3">' + '<label for = "position2" >' + 'Position' + '</label>' + '<input type = "text" class = "form-control" id = "position2" placeholder = "Partners/Friends with Benefits" required >' + '</div>' + 
         '<div class = "row">' + '<div class = "col-md-4 mb-3" >' + '<label for = "Length2">' + 'Length of relationship' + '</label>' + '</div>' + '</div>' + 
         
