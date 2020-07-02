@@ -1,0 +1,16 @@
+# Ignore jekyll and related files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore font files
+* .ttf
+
+# Ignore Mac system files
+.DS_Store
+
+# Ignore extra test files 
+.index-2.html
+.1index.html
+.relationship.html
