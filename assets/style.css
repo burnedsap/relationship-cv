@@ -1,4 +1,3 @@
-
 @font-face {
 font-family: 'InterBold';
 src: url("Inter-Bold.ttf") format("truetype");
@@ -22,11 +21,6 @@ src: url("Inter-Light.ttf") format("truetype");
 @font-face {
 font-family: 'InterThin';
 src: url("Inter-Thin.ttf") format("truetype");
-}
-
-
-
-
 }
 
 html, body {
