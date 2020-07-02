@@ -1,523 +1,463 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8">
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
-	<meta name="description" content="">
-	
-	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-	
-	<meta name="generator" content="Jekyll v4.0.1">
-	
-	<title>Relationship Maker</title>
-	
-	<!--<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+
+    <title>Relationship Maker</title>
+
+    <!--<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/checkout/">-->
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
-	  <script src="assets/sketch.js"></script>
-    <style>
-	.bd-placeholder-img {
-		font-size: 1.125rem;
-		text-anchor: middle;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-	}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="assets/sketch.js"></script>
+    <script type="text/javascript" src="file.js"></script>
 
-@media (min-width: 768px) {
-	.bd-placeholder-img-lg {
-		font-size: 3.5rem;
-	}
-}
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
+
     <!-- Custom styles for this template -->
     <link href="assets/style.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
-	<!--
-	NAVBAR
-	-->
-	
-	<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4"><a class="navbar-brand" href="#">Relationship CV Maker (v0.1 alpha version)</a>
-		
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-		
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<ul class="navbar-nav mr-auto">
-				<!--<li class="nav-item active"><a class="nav-link" href="#">About <span class="sr-only">(current)</span></a></li>-->
-				<!--<li class="nav-item"><a class="nav-link" href="#">Maker</a></li>-->
-			</ul>
-		</div>
-	</nav>
-	
-	<div class="container">
-		<div class="py-5 text-left" >
-			<path fill-rule="evenodd" d="M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708z" />
-			
-			<path d="M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-			</svg>
-			
-			<h2>Create your Relationship CV here!</h2>
-			
-			<p class="lead" style="text-align: left;">Fill in your details below, and receive a brand new relationship form! Your data is not collected or stored.</p>
-		</div>
-		
-		<div class="row">
-			<div class="col-md-12 order-md-1">
-				<h4 class="mb-3">Personal Details</h4>
-				
-				<hr class="mb-4">
-				
-				<!--<form class="needs-validation" novalidate>-->
-				<form>
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="firstName">First name*</label>
-							
-							<input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-							
-							<div class="invalid-feedback">Please choose a username.</div>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="lastName">Last name*</label>
-							
-							<input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="handle">Handle*</label>
-							
-							<div class="input-group">
-								<div class="input-group-prepend"><span class="input-group-text">@</span></div>
-								
-								<input type="text" class="form-control" id="handle" placeholder="Username" required>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="gender">Gender*</label>
-							
-							<input type="text" class="form-control" id="gender" placeholder="" value="" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="sexOrient">Sexual Orientation*</label>
-							
-							<input type="text" class="form-control" id="sexOrient" placeholder="" value="" required>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="currentStatus">Current Status*</label>
-							
-							<input type="text" class="form-control" id="currentStatus" placeholder="Single/It's complicated" value="" required>
-						</div>
-						
-						<div class="col-md-6 mb-3">
-							<label for="desiredStatus">Desired Status*</label>
-							
-							<input type="text" class="form-control" id="desiredStatus" placeholder="Stable Relationship/Short term affairs" value="" required>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="Length">Reasons you should you engage with me</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="reason1">#1*</label>
-							
-							<input type="text" class="form-control" id="reason1" placeholder="I work with Pokemon" value="" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="reason2">#2</label>
-							
-							<input type="text" class="form-control" id="reason2" placeholder="I'm funny" value="" >
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="reason3">#3</label>
-							
-							<input type="text" class="form-control" id="reason3" placeholder=";)" value="" >
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="Length">Reasons you should NOT you engage with me</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="nreason1">#1*</label>
-							
-							<input type="text" class="form-control" id="nreason1" placeholder="I work with Pokemon" value="" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="nreason2">#2</label>
-							
-							<input type="text" class="form-control" id="nreason2" placeholder="I'm funny" value="" >
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="nreason3">#3</label>
-							
-							<input type="text" class="form-control" id="nreason3" placeholder=";)" value="" >
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="Length">Deal Breakers</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="dealb1">#1*</label>
-							
-							<input type="text" class="form-control" id="dealb1" placeholder="Coldplay" value="" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="dealb2">#2</label>
-							
-							<input type="text" class="form-control" id="dealb2" placeholder="hating on chhola bhatura" value="" >
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="dealb3">#3</label>
-							
-							<input type="text" class="form-control" id="dealb3" placeholder="if u mention coldplay" value="" >
-						</div>
-					</div>
-					
-					
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="Length">Deal Makers</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="dealm1">#1*</label>
-							
-							<input type="text" class="form-control" id="dealm1" placeholder="Coldplay" value="" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="dealm2">#2</label>
-							
-							<input type="text" class="form-control" id="dealm2" placeholder="hating on chhola bhatura" value="" >
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="dealm3">#3</label>
-							
-							<input type="text" class="form-control" id="dealm3" placeholder="if u mention coldplay" value="" >
-						</div>
-					</div>
-										<hr class="mb-4">
 
-					<h4 class="mb-3">Previous Relationships</h4>
-					
-					<p class="mb-3">Enter details of your last two relationships</p>
-					
-					<hr class="mb-4">
-					<!--RELATIONSHIP 1-->
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4"><a class="navbar-brand" href="#">Relationship CV Maker (v0.1 alpha version)</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-					<h4 class="mb-3">Relationship 1</h4>
-					
-					<div class="mb-3">
-						<label for="position1">Position</label>
-						
-						<input type="text" class="form-control" id="position1" placeholder="Partners/Friends with Benefits" required>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="Length1">Length of relationship</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="years1">Years*</label>
-							
-							<select class="custom-select d-block w-100" id="years1" required>
-								<option value="">Choose...</option>
-								
-								<option>0</option>
-								
-								<option>1</option>
-								
-								<option>2</option>
-								
-								<option>3</option>
-								
-								<option>4</option>
-								
-								<option>5</option>
-								
-								<option>6</option>
-								
-								<option>7</option>
-								
-								<option>8</option>
-								
-								<option>9</option>
-								
-								<option>10</option>
-								
-								<option>11</option>
-								
-								<option>12</option>
-							</select>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="months1">Months*</label>
-							
-							<select class="custom-select d-block w-100" id="months1" required>
-								<option value="">Choose...</option>
-								
-								<option>0</option>
-								
-								<option>1</option>
-								
-								<option>2</option>
-								
-								<option>3</option>
-								
-								<option>4</option>
-								
-								<option>5</option>
-								
-								<option>6</option>
-								
-								<option>7</option>
-								
-								<option>8</option>
-								
-								<option>9</option>
-								
-								<option>10</option>
-								
-								<option>11</option>
-								
-								<option>12</option>
-							</select>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="weeks1">Weeks</label>
-							
-							<select class="custom-select d-block w-100" id="weeks1" required>
-								<option value="">Choose...</option>
-								
-								<option>0</option>
-								
-								<option>1</option>
-								
-								<option>2</option>
-								
-								<option>3</option>
-								
-								<option>4</option>
-							</select>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="description1">Describe Partner*</label>
-							
-							<input type="text" class="form-control" id="description1" placeholder="Colleague/Friend/Schoolmate" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="termination1">Cause for termination*</label>
-							
-							<input type="text" class="form-control" id="termination1" placeholder="Drifted away/Disagreement" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="interpstatus1">Current inter-personal status*</label>
-							
-							<input type="text" class="form-control" id="interpstatus1" placeholder="Still friends/sworn enemies" required>
-						</div>
-					</div>
-					
-					<hr class="mb-4">
-					
-					<!--RELATIONSHIP 2-->
-					
-					<h4 class="mb-3">Relationship 2</h4>
-					
-					<div class="mb-3">
-						<label for="position2">Position</label>
-						
-						<input type="text" class="form-control" id="position2" placeholder="Partners/Friends with Benefits" required>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="Length2">Length of relationship</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="years2">Years</label>
-							
-							<select class="custom-select d-block w-100" id="years2" required>
-								<option value="">Choose...</option>
-								
-								<option>0</option>
-								
-								<option>1</option>
-								
-								<option>2</option>
-								
-								<option>3</option>
-								
-								<option>4</option>
-								
-								<option>5</option>
-								
-								<option>6</option>
-								
-								<option>7</option>
-								
-								<option>8</option>
-								
-								<option>9</option>
-								
-								<option>10</option>
-								
-								<option>11</option>
-								
-								<option>12</option>
-							</select>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="months2">Months</label>
-							
-							<select class="custom-select d-block w-100" id="months2" required>
-								<option value="">Choose...</option>
-								
-								<option>0</option>
-								
-								<option>1</option>
-								
-								<option>2</option>
-								
-								<option>3</option>
-								
-								<option>4</option>
-								
-								<option>5</option>
-								
-								<option>6</option>
-								
-								<option>7</option>
-								
-								<option>8</option>
-								
-								<option>9</option>
-								
-								<option>10</option>
-								
-								<option>11</option>
-								
-								<option>12</option>
-							</select>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="weeks2">Weeks</label>
-							
-							<select class="custom-select d-block w-100" id="weeks2" required>
-								<option value="">Choose...</option>
-								
-								<option>0</option>
-								
-								<option>1</option>
-								
-								<option>2</option>
-								
-								<option>3</option>
-								
-								<option>4</option>
-							</select>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="description2">Describe Partner</label>
-							
-							<input type="text" class="form-control" id="description2" placeholder="Colleague/Friend/Schoolmate" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="termination2">Cause for termination</label>
-							
-							<input type="text" class="form-control" id="termination2" placeholder="Drifted away/Disagreement" required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="interpstatus2">Current inter-personal status</label>
-							
-							<input type="text" class="form-control" id="interpstatus2" placeholder="Still friends/sworn enemies" required>
-						</div>
-					</div>
-					
-					<hr class="mb-4">
-					
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="Length">*NSFW Section* ;) enter whatever u want here ;)</label>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col-md-4 mb-3">
-							<label for="nfsw1">#1*</label>
-							
-							<input type="text" class="form-control" id="ns1" placeholder="😈"  required>
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="nfsw2">#2</label>
-							
-							<input type="text" class="form-control" id="ns2" placeholder="🤩"  >
-						</div>
-						
-						<div class="col-md-4 mb-3">
-							<label for="nfsw3">#3</label>
-							
-							<input type="text" class="form-control" id="ns3" placeholder="☔️"  >
-						</div>
-					</div>
-					<!--<div class="custom-control custom-checkbox">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <!--<li class="nav-item active"><a class="nav-link" href="#">About <span class="sr-only">(current)</span></a></li>-->
+                <!--<li class="nav-item"><a class="nav-link" href="#">Maker</a></li>-->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="py-5 text-left">
+            <!--
+               <svg>
+                <path fill-rule="evenodd" d="M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708z" />
+
+                <path d="M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+            </svg>
+-->
+
+            <h2>Create your Relationship CV here!</h2>
+
+            <p class="lead" style="text-align: left;">Fill in your details below, and receive a brand new relationship form! Your data is not collected or stored.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Personal Details</h4>
+
+                <hr class="mb-4">
+
+                <!--<form class="needs-validation" novalidate>-->
+                <form>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="firstName">First name*</label>
+
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+
+                            <div class="invalid-feedback">Please choose a username.</div>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="lastName">Last name*</label>
+
+                            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="handle">Handle*</label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+
+                                <input type="text" class="form-control" id="handle" placeholder="Username" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="gender">Gender*</label>
+                            <input type="text" class="form-control" id="gender" placeholder="" value="" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="sexOrient">Sexual Orientation*</label>
+                            <input type="text" class="form-control" id="sexOrient" placeholder="" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="currentStatus">Current Status*</label>
+
+                            <input type="text" class="form-control" id="currentStatus" placeholder="Single/It's complicated" value="" required>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label for="desiredStatus">Desired Status*</label>
+
+                            <input type="text" class="form-control" id="desiredStatus" placeholder="Stable Relationship/Short term affairs" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Length">Reasons you should you engage with me</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="reason1">#1*</label>
+
+                            <input type="text" class="form-control" id="reason1" placeholder="I work with Pokemon" value="" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="reason2">#2</label>
+
+                            <input type="text" class="form-control" id="reason2" placeholder="I'm funny" value="">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="reason3">#3</label>
+
+                            <input type="text" class="form-control" id="reason3" placeholder=";)" value="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Length">Reasons you should NOT you engage with me</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="nreason1">#1*</label>
+
+                            <input type="text" class="form-control" id="nreason1" placeholder="I work with Pokemon" value="" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="nreason2">#2</label>
+
+                            <input type="text" class="form-control" id="nreason2" placeholder="I'm not funny" value="">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="nreason3">#3</label>
+
+                            <input type="text" class="form-control" id="nreason3" placeholder=";)" value="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Length">Deal Breakers</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="dealb1">#1*</label>
+
+                            <input type="text" class="form-control" id="dealb1" placeholder="Coldplay" value="" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="dealb2">#2</label>
+
+                            <input type="text" class="form-control" id="dealb2" placeholder="hating on chhola bhatura" value="">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="dealb3">#3</label>
+
+                            <input type="text" class="form-control" id="dealb3" placeholder="if u mention coldplay" value="">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Length">Deal Makers</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="dealm1">#1*</label>
+
+                            <input type="text" class="form-control" id="dealm1" placeholder="Coldplay" value="" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="dealm2">#2</label>
+
+                            <input type="text" class="form-control" id="dealm2" placeholder="hating on chhola bhatura" value="">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="dealm3">#3</label>
+
+                            <input type="text" class="form-control" id="dealm3" placeholder="if u mention coldplay" value="">
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+
+                    <h4 class="mb-3">Previous Relationships</h4>
+
+                    <p class="mb-3">Enter details of your last two relationships</p>
+
+                    <hr class="mb-4">
+                    <!--RELATIONSHIP 1-->
+
+                    <h4 class="mb-3">Relationship 1</h4>
+
+                    <div class="mb-3">
+                        <label for="position1">Position</label>
+
+                        <input type="text" class="form-control" id="position1" placeholder="Partners/Friends with Benefits" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="Length1">Length of relationship</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <label for="years1">Years*</label>
+
+                            <select class="custom-select d-block w-100" id="years1" required>
+                                <option value="">Choose...</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <label for="months1">Months*</label>
+                            <select class="custom-select d-block w-100" id="months1" required>
+                                <option value="">Choose...</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 mb-4">
+                            <label for="weeks1">Weeks</label>
+                            <select class="custom-select d-block w-100" id="weeks1" required>
+                                <option value="">Choose...</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="description1">Describe Partner*</label>
+
+                            <input type="text" class="form-control" id="description1" placeholder="Colleague/Friend/Schoolmate" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="termination1">Cause for termination*</label>
+
+                            <input type="text" class="form-control" id="termination1" placeholder="Drifted away/Disagreement" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="interpstatus1">Current inter-personal status*</label>
+
+                            <input type="text" class="form-control" id="interpstatus1" placeholder="Still friends/sworn enemies" required>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+
+                   <!--For adding another relationship-->
+                    <div id="addRelationship"></div>
+                    <button id="add" class="btn btn-warning md-4 mb-3" onclick="addMore()">Add More</button>
+
+
+                    <!--RELATIONSHIP 2-->
+
+<!--
+                    <h4 class="mb-3">Relationship 2</h4>
+
+                    <div class="mb-3">
+                        <label for="position2">Position</label>
+
+                        <input type="text" class="form-control" id="position2" placeholder="Partners/Friends with Benefits" required>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="Length2">Length of relationship</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="years2">Years</label>
+                            <select class="custom-select d-block w-100" id="years2" required>
+                                <option value="">Choose...</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="months2">Months</label>
+                            <select class="custom-select d-block w-100" id="months2" required>
+                                <option value="">Choose...</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="weeks2">Weeks</label>
+
+                            <select class="custom-select d-block w-100" id="weeks2" required>
+                                <option value="">Choose...</option>
+                                <option>0</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="description2">Describe Partner</label>
+
+                            <input type="text" class="form-control" id="description2" placeholder="Colleague/Friend/Schoolmate" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="termination2">Cause for termination</label>
+
+                            <input type="text" class="form-control" id="termination2" placeholder="Drifted away/Disagreement" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="interpstatus2">Current inter-personal status</label>
+
+                            <input type="text" class="form-control" id="interpstatus2" placeholder="Still friends/sworn enemies" required>
+                        </div>
+                    </div>
+
+                    <hr class="mb-4">
+-->
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Length">*NSFW Section* ;) enter whatever u want here ;)</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="nfsw1">#1*</label>
+
+                            <input type="text" class="form-control" id="ns1" placeholder="😈" required>
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="nfsw2">#2</label>
+
+                            <input type="text" class="form-control" id="ns2" placeholder="🤩">
+                        </div>
+
+                        <div class="col-md-4 mb-3">
+                            <label for="nfsw3">#3</label>
+
+                            <input type="text" class="form-control" id="ns3" placeholder="☔️">
+                        </div>
+                    </div>
+                    <!--<div class="custom-control custom-checkbox">
 						<input type="checkbox" class="custom-control-input" id="same-address">
 						
 						<label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
@@ -588,7 +528,7 @@
 							<div class="invalid-feedback">Security code required</div>
 						</div>
 					</div>-->
-					<!--<div class="form-row">
+                    <!--<div class="form-row">
 						<div class="col-md-3 mb-3">
 							<label for="validationCustom04">State</label>
 							
@@ -597,52 +537,52 @@
 							<div class="invalid-feedback">Please provide a valid state.</div>
 						</div>
 					</div>-->
-					
-					
-					
-										
-					<!--<div class="form-group">
+
+
+
+
+                    <!--<div class="form-group">
 						<div class="form-check">
 							<!--<input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>--*>
 							
 							<!--<label class="form-check-label" for="invalidCheck2">Agree to terms and conditions</label>--*>
 						</div>
 					</div>-->
-					
-					<hr class="mb-4">
-					<!--<button class="btn btn-primary" type="submit">Submit form</button>-->
-					<!--<button class="btn btn-primary btn-lg btn-block btn-success" type="submit" >Validate First</button>-->
-								<p class="mb-1">this is a shit website so please fill in everything i do not know how to make this thing validate information its such a palaver i can't figure this out why is bootstrap so difficult why do i even bother.</p>
-								
-			<p class="mb-1">just please enter info with the asterisk</p>
-			
-					<hr class="mb-4">
 
-					<button class="btn btn-primary btn-lg btn-block" type="button" onclick="doFunction();">Download CV</button>
-					
-					<!--onclick="doFunction();"-->
-				</form>
-			</div>
-		</div>
-		
-		<footer class="my-5 pt-5 text-muted text-center text-small">
-			<p class="mb-1">&copy; Shaadi.com got nothing on this</p>
-			
-			<p class="mb-1">please let me know if this ever works out for you hit me up @burnedsap</p>
-			
-			<p class="mb-1">sorry for the shit code i  should've coded this from scratch why do i even bother with making my life easier</p>
-			
-			<!--<ul class="list-inline">
+                    <hr class="mb-4">
+                    <!--<button class="btn btn-primary" type="submit">Submit form</button>-->
+                    <!--<button class="btn btn-primary btn-lg btn-block btn-success" type="submit" >Validate First</button>-->
+                    <p class="mb-1">this is a shit website so please fill in everything i do not know how to make this thing validate information its such a palaver i can't figure this out why is bootstrap so difficult why do i even bother.</p>
+
+                    <p class="mb-1">just please enter info with the asterisk</p>
+
+                    <hr class="mb-4">
+
+                    <button class="btn btn-primary btn-lg btn-block" type="button" onclick="doFunction();">Download CV</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; Shaadi.com got nothing on this</p>
+            <p class="mb-1">please let me know if this ever works out for you hit me up @burnedsap</p>
+            <p class="mb-1">sorry for the shit code i should've coded this from scratch why do i even bother with making my life easier</p>
+
+            <!--<ul class="list-inline">
 				<li class="list-inline-item"><a href="#">Privacy</a></li>
 				<li class="list-inline-item"><a href="#">Terms</a></li>
 				<li class="list-inline-item"><a href="#">Support</a></li>
 			</ul>-->
-		</footer>
-	</div>
-	
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"/>')</script> < / < script src = "https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity = "sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin = "anonymous" ></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-	
-	</html>
+        </footer>
+    </div>
+
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>
+        window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js" />')
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body></html>
